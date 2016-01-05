@@ -68,7 +68,11 @@ class ElfinderController extends Controller
 
     public function showConnector()
     {
-        $roots = $this->app->config->get('elfinder.roots', []);
+        if(Auth::user()->can('administer')){
+            $roots = $this->app->config->get('elfinderAdmin.roots', []);
+        }else{
+            $roots = $this->app->config->get('elfinder.roots', []);
+        }
         if (empty($roots)) {
             $dirs = (array) $this->app['config']->get('elfinder.dir', []);
             foreach ($dirs as $dir) {
