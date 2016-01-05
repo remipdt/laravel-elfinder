@@ -4,6 +4,7 @@ use Illuminate\Filesystem\FilesystemAdapter;
 use Illuminate\Foundation\Application;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Request;
+use Auth;
 
 class ElfinderController extends Controller
 {
