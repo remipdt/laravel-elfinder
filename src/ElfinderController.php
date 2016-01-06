@@ -69,7 +69,7 @@ class ElfinderController extends Controller
 
     public function showConnector()
     {
-        if(Auth::user()->can('administer')){
+        if(Auth::user()->can('manage_document')){
             $roots = $this->app->config->get('elfinderAdmin.roots', []);
         }else{
             $roots = $this->app->config->get('elfinder.roots', []);
